@@ -8,9 +8,8 @@
 //headers in this package
 #include <openjtalk_ros/TextToSpeechAction.h>
 
-//headers in STL
-#include <sys/stat.h>
-//#include 
+//headers in boost
+#include <boost/filesystem.hpp>
 
 class text_to_speech
 {

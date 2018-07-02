@@ -3,7 +3,12 @@
 
 text_to_speech::text_to_speech() : params_(), tts_action_server_(nh_, params_.tts_goal_topic, boost::bind(&text_to_speech::tts_goal_callback_, this, _1), true)
 {
-
+	boost::filesystem::path voice_file(params_.voice_file_path);
+	if(boost::filesystem::exists(voice_file) == false)
+	{
+		ROS_ERROR_STREAM("ERROR : " << params_.voice_file_path << " does not exist." );
+		std::exit(0);
+	}
 }
 
 text_to_speech::~text_to_speech()
