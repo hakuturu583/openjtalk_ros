@@ -22,5 +22,11 @@ install:
   - git clone https://github.com/ros-industrial/industrial_ci.git .ci_config		
 script:		
   - source .ci_config/travis.sh 
+addons:
+  apt:
+    packages: 
+      - open-jtalk
+      - open-jtalk-mecab-naist-jdic
+      - hts-voice-nitech-jp-atr503-m001
 git:
 submodules: true
