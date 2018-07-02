@@ -5,4 +5,5 @@ string text
 duration elapsed_time
 ---
 #feedback
-duration remain_time
+duration elapsed_time
+bool wav_file_generated
