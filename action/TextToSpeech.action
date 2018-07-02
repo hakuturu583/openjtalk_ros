@@ -1,0 +1,8 @@
+#goal
+string text
+---
+#result
+duration elapsed_time
+---
+#feedback
+duration remain_time
