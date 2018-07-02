@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
 <launch>
-    
+    <node pkg="openjtalk_ros" type="text_to_speech_node" name="text_to_speech_node" args="" respawn="true">
+        <param name="tts_goal_topic" value="goal"/>
+        <param name="voice_file_path" value="$(find openjtalk_ros)/voice/mei_normal.hstvoice"/>
+    </node>
 </launch>

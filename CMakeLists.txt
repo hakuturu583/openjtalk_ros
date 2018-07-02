@@ -128,7 +128,7 @@ target_link_libraries(text_to_speech_node ${catkin_LIBRARIES})
 ## Install ##
 #############
 
-foreach(dir action launch config)
+foreach(dir action launch)
   install(DIRECTORY ${dir}/
     DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/${dir})
 endforeach(dir)
