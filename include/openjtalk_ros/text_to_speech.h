@@ -10,6 +10,7 @@
 
 //headers in STL
 #include <sys/stat.h>
+//#include 
 
 class text_to_speech
 {
@@ -29,6 +30,7 @@ class text_to_speech
     private:
         parameters params_;
         ros::NodeHandle nh_;
+        bool exec_shell_command(const char* cmd, std::string& stdOut, int& exitCode);
         actionlib::SimpleActionServer<openjtalk_ros::TextToSpeechAction> tts_action_server_;
         void tts_goal_callback_(const openjtalk_ros::TextToSpeechGoalConstPtr &goal);
         openjtalk_ros::TextToSpeechFeedback feedback_;
