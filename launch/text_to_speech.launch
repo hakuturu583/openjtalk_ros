@@ -3,5 +3,6 @@
     <node pkg="openjtalk_ros" type="text_to_speech_node" name="text_to_speech_node" args="" respawn="true">
         <param name="tts_goal_topic" value="/text_to_speech_node/goal"/>
         <param name="voice_file_path" value="$(find openjtalk_ros)/voice/mei_normal.htsvoice"/>
+        <param name="dictionary_path" value="/var/lib/mecab/dic/open-jtalk/naist-jdic"/>
     </node>
 </launch>

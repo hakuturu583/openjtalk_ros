@@ -19,8 +19,12 @@ text_to_speech::~text_to_speech()
 void text_to_speech::tts_goal_callback_(const openjtalk_ros::TextToSpeechGoalConstPtr &goal)
 {
 	feedback_.wav_file_generated = false;
-	std::string command = std::string("open_jtalk -m ") + params_.voice_file_path + 
-		" -ow " + ros::package::getPath("openjtalk_ros") +  " voice.wav -x " + params_.dictionary_path + " text.txt";
+	int exit_code;
+	std::string out;
+	std::string generate_text_file_command;
+	std::string generate_wav_file_command = std::string("open_jtalk -m ") + params_.voice_file_path + 
+		" -ow " + ros::package::getPath("openjtalk_ros") +  "/data/voice.wav -x " + params_.dictionary_path + " " + ros::package::getPath("openjtalk_ros") + "/data/text.txt";
+	exec_shell_command(generate_wav_file_command.c_str(),out,exit_code);
 	feedback_.wav_file_generated = true;
 }
 
