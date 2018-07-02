@@ -3,6 +3,7 @@
 
 //headers in ROS
 #include <ros/ros.h>
+#include <ros/package.h>
 #include <actionlib/server/simple_action_server.h>
 
 //headers in this package
@@ -11,6 +12,9 @@
 //headers in boost
 #include <boost/filesystem.hpp>
 
+//headers in STL
+#include <string>
+
 class text_to_speech
 {
     public:
@@ -18,10 +22,12 @@ class text_to_speech
         {
             std::string voice_file_path;
             std::string tts_goal_topic;
+            std::string dictionary_path;
             parameters()
             {
                 ros::param::param<std::string>(ros::this_node::getName()+"/voice_file_path", voice_file_path, "");
                 ros::param::param<std::string>(ros::this_node::getName()+"/tts_goal_topic", tts_goal_topic, ros::this_node::getName()+"/goal");
+                ros::param::param<std::string>(ros::this_node::getName()+"/dictionary_path", dictionary_path, "/usr/local/share/open_jtalk/open_jtalk_dic_utf_8-1.09/");
             }
         };
         text_to_speech();
